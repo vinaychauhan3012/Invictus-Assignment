@@ -40,6 +40,11 @@ export default class App extends Component {
     })
   
   }
+  handleRefresh = ()=>{
+    this.setState({
+      isSubmit:false
+    })
+  }
   
   
   render() {
@@ -49,7 +54,8 @@ export default class App extends Component {
             <input type="number" value={this.state.number} onChange={this.handleChange}/>
             <button type="submit" >Submit</button>
         </form>
-      {this.state.isSubmit && <TableList number={this.state.number} result={this.state.result}/>}
+      {this.state.isSubmit && <TableList number={this.state.number} result={this.state.result} submit={this.handleRefresh}/>}
+      
       </div>
     )
   }
