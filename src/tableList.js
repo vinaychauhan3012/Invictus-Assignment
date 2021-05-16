@@ -4,6 +4,7 @@ import React, { Component} from 'react'
 export default class tableList extends Component {
         
      renderTable = (r,no,n)=>
+     // map function to render data from array to table in html
         r.map((keys,Index)=>{
             if(n<no && Index<r.length-1){
                 n++
@@ -21,6 +22,7 @@ export default class tableList extends Component {
      
     render() {
         const {result,number} = this.props;
+        //converting map to array to render data as html
         let r= Array.from(result);
         let n=0;
         
